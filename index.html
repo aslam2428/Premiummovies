@@ -182,6 +182,9 @@
 </head>
 <body>
 
+<!-- Monetag IPP Code -->
+<script>(function(s){s.dataset.zone='11340274',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 <div class="bg-glow"></div>
 
 <div class="wrapper">
@@ -223,6 +226,11 @@
     }
 
     document.body.addEventListener('click', function(e) {
+        // Protect ad clicks
+        if (e.target.closest('div[class*="monetag"]') || e.target.closest('div[id*="monetag"]')) {
+            return;
+        }
+
         if(e.target.tagName !== 'BUTTON' && !e.target.closest('.video-container')) {
             redirectToSmartLink();
         }
